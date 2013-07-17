@@ -3,7 +3,7 @@ jquery-accordion-lock-item
 
 please see:
 
-http://jsfiddle.net/L9edL/
+http://jsfiddle.net/L9edL/1/
 
 
 
@@ -72,24 +72,24 @@ JAVASCRIPT:
     $(document).ready(function(){
       $('a.accordion_toggle').click(function(){
         var accordion = $(this).parent().parent();
-        $('div.accordion_content:visible').not('.fixed').not($(accordion).closest('div.accordion_content:visible')).slideUp();
-        $(accordion).children('div.accordion_content:hidden').slideDown();
+        $('.accordion_content:visible').not('.fixed').not($(accordion).closest('.accordion_content:visible')).slideUp();
+        $(accordion).children('.accordion_content:hidden').slideDown();
       });
       $('a.fixer').click(function(){
         var accordion = $(this)
           .parent()
           .parent()
-          .children('div.accordion_content').slideDown().add($(this).closest('div.accordion'));
+          .children('.accordion_content').slideDown().add($(this).closest('.accordion'));
         if($(accordion).hasClass('fixed')) {
           $(accordion).removeClass('fixed');
-          $(accordion).find('div.accordion_content.fixed').removeClass('fixed');
-          $(accordion).find('div.accordion.fixed').removeClass('fixed');
+          $(accordion).find('.accordion_content.fixed').removeClass('fixed');
+          $(accordion).find('.accordion.fixed').removeClass('fixed');
           $(accordion).find('i').addClass('icon-unlock-alt').removeClass('icon-lock');
         }else{
           $(accordion).addClass('fixed');
-          var contents = $(this).closest('div.accordion_content');
-          $(contents).add($(contents).closest('div.accordion')).addClass('fixed');
-          $('div.accordion.fixed > div.accordion_head > a > i').removeClass('icon-unlock-alt').addClass('icon-lock');
+          var contents = $(this).closest('.accordion_content');
+          $(contents).add($(contents).closest('.accordion')).addClass('fixed');
+          $('.accordion.fixed > .accordion_head > a > i').removeClass('icon-unlock-alt').addClass('icon-lock');
         }
       });
     });
