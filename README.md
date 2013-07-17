@@ -1,4 +1,6 @@
 jquery-accordion-lock-item
 ==========================
 
-Use bootstrap and jquery to lock itens on accodion
+please see:
+
+http://jsfiddle.net/L9edL/
